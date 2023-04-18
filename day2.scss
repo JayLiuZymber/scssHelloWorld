@@ -1,0 +1,93 @@
+/* 
+Day02::方便又好用的SCSS - iT 邦幫忙::一起幫忙解決難題，拯救 IT 人的一天
+https://ithelp.ithome.com.tw/articles/10190746
+ */
+// 巢狀(Nesting)
+.box{
+    width: 100%;
+    margin: 0 auto;
+    .title{
+        padding: 10px;
+        p{
+            color: rgba(255, 0, 0, 1);;
+        }
+    }
+}
+
+p{
+    font:{
+        family: arial, sans-serif;
+        size: 10px;
+        /* text-decoration */
+        decoration: none;
+    }
+}
+
+.box{
+    color: rgba(0, 0, 0, 1);
+    &:hover{
+        color: red;
+    }
+}
+
+// 變數(Variables)
+$box-shadow: 10px 10px 5px rgba(0, 0, 0, 1);
+.box{
+    box-shadow: $box-shadow;
+}
+
+$num: 5px;
+.container{
+    margin:$num*2 $num;
+}
+
+// 混入(Mixins)
+@mixin css3-border-radius() { 
+    -ms-border-radius: 5px;
+    -moz-border-radius: 5px; 
+    -webkit-border-radius: 5px; 
+    -o-border-radius: 5px; 
+    border-radius: 5px; 
+}
+.box {
+    @include css3-border-radius();
+}
+
+@mixin css3-border-radius($i) { 
+    -ms-border-radius: $i;
+    -moz-border-radius: $i; 
+    -webkit-border-radius: $i; 
+    -o-border-radius: $i; 
+    border-radius: $i; 
+}
+.box {
+    @include css3-border-radius(3px);
+}
+
+/* 引入、匯入(Import) */
+// @import "head.scss";
+// @import "main.scss";
+// @import "footer.scss"
+@import "day+5.scss";
+
+/* 繼承(Extend) */
+%box {
+    border: 1px solid rgba(0, 0, 0, 1);
+    padding: 10px;
+    color: rgba(0, 0, 0, 1);
+}
+
+.success {
+    @extend %box;
+    border-color: rbga(0, 128, 0, 1);
+}
+
+.danger {
+    @extend %box;
+    border-color: rgba(255, 0, 0, 1);
+}
+
+// 函式(Functions)
+// https://sass-lang.com/documentation/modules
+
+// 註解(Comment)

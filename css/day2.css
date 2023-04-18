@@ -1,0 +1,108 @@
+@charset "UTF-8";
+/* 
+Day02::方便又好用的SCSS - iT 邦幫忙::一起幫忙解決難題，拯救 IT 人的一天
+https://ithelp.ithome.com.tw/articles/10190746
+ */
+.box {
+  width: 100%;
+  margin: 0 auto;
+}
+.box .title {
+  padding: 10px;
+}
+.box .title p {
+  color: red;
+}
+
+p {
+  font-family: arial, sans-serif;
+  font-size: 10px;
+  /* text-decoration */
+  font-decoration: none;
+}
+
+.box {
+  color: black;
+}
+.box:hover {
+  color: red;
+}
+
+.box {
+  box-shadow: 10px 10px 5px black;
+}
+
+.container {
+  margin: 10px 5px;
+}
+
+.box {
+  -ms-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -o-border-radius: 5px;
+  border-radius: 5px;
+}
+
+.box {
+  -ms-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -o-border-radius: 3px;
+  border-radius: 3px;
+}
+
+/* 引入、匯入(Import) */
+/* 
+Day05-讓CSS不再難讀！SCSS - iT 邦幫忙::一起幫忙解決難題，拯救 IT 人的一天
+https://ithelp.ithome.com.tw/articles/10203433
+ */
+.container {
+  display: block;
+}
+.container .box {
+  width: 50px;
+  height: 50px;
+}
+.container + .container2 {
+  display: inline-block;
+}
+.container:hover {
+  color: red;
+  cursor: pointer;
+}
+
+.container {
+  display: block;
+  width: 100px;
+  height: 100px;
+}
+
+.container1, .container2 {
+  display: block;
+  width: 100px;
+  height: 100px;
+}
+
+.container2 {
+  background-color: blue;
+}
+
+.container {
+  margin: 10;
+}
+
+/* 繼承(Extend) */
+.danger, .success {
+  border: 1px solid black;
+  padding: 10px;
+  color: black;
+}
+
+.success {
+  border-color: rbga(0, 128, 0, 1);
+}
+
+.danger {
+  border-color: red;
+}
